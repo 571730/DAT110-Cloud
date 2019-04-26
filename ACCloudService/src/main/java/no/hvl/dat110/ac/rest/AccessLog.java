@@ -42,10 +42,7 @@ public class AccessLog {
 	
 	// TODO: JSON representation of the access log
 	public String toJson () {
-		String json = null;
-    	for (AccessEntry entry : log.values()){
-    		json += entry.getMessage();
-		}
-    	return json;
+		Gson gson = new Gson();
+    	return gson.toJson(log);
     }
 }
